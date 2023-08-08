@@ -1,22 +1,28 @@
 package com.trip.cheap.flight;
 
+import static java.util.Objects.requireNonNull;
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.util.ObjectUtils;
 
 public class RequestUtil {
 
     @Value("${baseUrl}")
-    private String baseUrl;
+    private static String baseUrl;
 
-    public String resolveRequest(FlightQueryParam queryParam) {
-
+    public static String resolveRequest(FlightQueryParam queryParam) {
+        //TODO: resolve NPE checking each value to be != null
         return new StringBuilder()
                 .append(baseUrl)
-                .append(queryParam.getFlyFrom().isEmpty()
+                .append(queryParam.getFlyFrom() != null
+                        ? queryParam.getFlyFrom().isEmpty()
                         ? "fly_from=" + queryParam.getFlyFrom() + "&"
+                        : ""
                         : "")
-                .append(queryParam.getFlyTo().isEmpty()
+                .append(queryParam.getFlyTo() != null
+                        ? queryParam.getFlyTo().isEmpty()
                         ? "fly_to=" + queryParam.getFlyTo() + "&"
+                        : ""
                         : "")
                 .append(queryParam.getDateFrom().isEmpty()
                         ? "date_from=" + queryParam.getDateFrom() + "&"

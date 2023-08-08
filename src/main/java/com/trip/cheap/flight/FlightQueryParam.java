@@ -7,7 +7,8 @@ import lombok.Getter;
 @Builder
 public class FlightQueryParam {
 
-    private String flyFrom;
+    @Builder.Default
+    private String flyFrom = "30/11/2023";
 
     private String flyTo;
 
