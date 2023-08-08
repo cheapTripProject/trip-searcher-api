@@ -1,10 +1,15 @@
 package com.trip.cheap.flight;
 
+import lombok.Builder;
+import lombok.Getter;
+
+@Getter
+@Builder
 public class FlightQueryParam {
 
-    private String apiKey;
-
     private String flyFrom;
+
+    private String flyTo;
 
     // dd/mm/yyyy
     private String dateFrom;
@@ -18,26 +23,26 @@ public class FlightQueryParam {
     // dd/mm/yyyy
     private String returnTo;
 
-    private int nightsInDstFrom;
+    private Integer nightsInDstFrom;
 
-    private int nightsInDstTo;
+    private Integer nightsInDstTo;
 
     // duration in hours
-    private int maxFlyDuration;
+    private Integer maxFlyDuration;
 
     private boolean retFromDiffCity;
 
     private boolean retToDiffCity;
 
-    private int oneForCity;
+    private Integer oneForCity;
 
-    private int onePerDate;
+    private Integer onePerDate;
 
-    private int adults;
+    private Integer adults;
 
-    private int children;
+    private Integer children;
 
-    private int infants;
+    private Integer infants;
 
     private String selectedCabins;
 
@@ -67,9 +72,9 @@ public class FlightQueryParam {
 
     private String locale;
 
-    private int priceFrom;
+    private Integer priceFrom;
 
-    private int priceTo;
+    private Integer priceTo;
 
     private String dtimeFrom;
 
@@ -91,15 +96,15 @@ public class FlightQueryParam {
 
     private String stopOverTo;
 
-    private int maxStopOvers;
+    private Integer maxStopOvers;
 
-    private int maxSectorStopOvers;
+    private Integer maxSectorStopOvers;
 
-    private int connOnDiffAirport;
+    private Integer connOnDiffAirport;
 
-    private int retFromDiffAirport;
+    private Integer retFromDiffAirport;
 
-    private int retToDiffAirport;
+    private Integer retToDiffAirport;
 
     private String selectAirlines;
 
@@ -115,6 +120,5 @@ public class FlightQueryParam {
 
     private String sort;
 
-    private int limit;
-
+    private Integer limit;
 }
