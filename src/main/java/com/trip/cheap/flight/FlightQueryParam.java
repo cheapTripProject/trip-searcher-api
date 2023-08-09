@@ -31,9 +31,11 @@ public class FlightQueryParam {
     // duration in hours
     private Integer maxFlyDuration;
 
-    private boolean retFromDiffCity;
+    @Builder.Default
+    private boolean retFromDiffCity = false;
 
-    private boolean retToDiffCity;
+    @Builder.Default
+    private boolean retToDiffCity = false;
 
     private Integer oneForCity;
 
@@ -63,9 +65,11 @@ public class FlightQueryParam {
 
     private String retFlyDaysType;
 
-    private boolean onlyWorkingDays;
+    @Builder.Default
+    private boolean onlyWorkingDays = false;
 
-    private boolean onlyWeekends;
+    @Builder.Default
+    private boolean onlyWeekends = false;
 
     private String partnerMarket;
 
@@ -109,15 +113,18 @@ public class FlightQueryParam {
 
     private String selectAirlines;
 
-    private boolean selectAirlinesExcluded;
+    @Builder.Default
+    private boolean selectAirlinesExcluded = false;
 
     private String selectStopAirport;
 
-    private boolean selectStopAirportExclude;
+    @Builder.Default
+    private boolean selectStopAirportExclude = false;
 
     private String vehicleType;
 
-    private boolean enableVi;
+    @Builder.Default
+    private boolean enableVi = false;
 
     private String sort;
 
