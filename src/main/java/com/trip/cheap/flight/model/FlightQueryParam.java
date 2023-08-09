@@ -7,7 +7,6 @@ import lombok.Getter;
 @Builder
 public class FlightQueryParam {
     //TODO: set default values based on documentation
-    // create enums for fields that has fixed values
 
     @Builder.Default
     private String baseUrl = "https://api.tequila.kiwi.com/v2/search?";
