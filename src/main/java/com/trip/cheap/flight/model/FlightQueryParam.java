@@ -1,4 +1,4 @@
-package com.trip.cheap.flight;
+package com.trip.cheap.flight.model;
 
 import lombok.Builder;
 import lombok.Getter;
@@ -6,6 +6,11 @@ import lombok.Getter;
 @Getter
 @Builder
 public class FlightQueryParam {
+    //TODO: set default values based on documentation
+    // create enums for fields that has fixed values
+
+    @Builder.Default
+    private String baseUrl = "https://api.tequila.kiwi.com/v2/search?";
 
     @Builder.Default
     private String flyFrom = "30/11/2023";

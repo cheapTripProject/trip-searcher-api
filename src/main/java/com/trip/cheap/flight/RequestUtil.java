@@ -1,18 +1,17 @@
 package com.trip.cheap.flight;
 
+import com.trip.cheap.flight.model.FlightQueryParam;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.util.ObjectUtils;
 
+@Slf4j
 public class RequestUtil {
 
-    @Value("${baseUrl}")
-    private static String baseUrl;
-
     public static String resolveRequest(FlightQueryParam queryParam) {
-        //TODO: resolve NPE checking each value to be != null
+        log.debug("resolve queryParam object: " + queryParam.toString() );
         return StringUtils.chop(new StringBuilder()
-            .append(baseUrl)
+            .append(queryParam.getBaseUrl())
             .append(queryParam.getFlyFrom() != null
                 ? !queryParam.getFlyFrom().isEmpty()
                 ? "fly_from=" + queryParam.getFlyFrom() + "&"
@@ -125,9 +124,9 @@ public class RequestUtil {
                 ? "fly_days_type=" + queryParam.getFlyDaysType() + "&"
                 : ""
                 : "")
-            .append(queryParam.getFlyFrom() != null
-                ? !queryParam.getFlyFrom().isEmpty()
-                ? "ret_fly_days=" + queryParam.getFlyFrom() + "&"
+            .append(queryParam.getFlyDays() != null
+                ? !queryParam.getFlyDays().isEmpty()
+                ? "ret_fly_days=" + queryParam.getFlyDays() + "&"
                 : ""
                 : "")
             .append(queryParam.getRetFlyDaysType() != null
