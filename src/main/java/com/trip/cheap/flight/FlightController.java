@@ -1,7 +1,7 @@
 package com.trip.cheap.flight;
 
-import com.trip.cheap.flight.model.Currency;
-import com.trip.cheap.flight.model.FlightQueryParam;
+import com.trip.cheap.flight.model.request.Currency;
+import com.trip.cheap.flight.model.request.FlightQueryParam;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.io.IOException;
 
-import static com.trip.cheap.flight.model.Cabins.ECONOMY;
-import static com.trip.cheap.flight.model.Sort.PRICE;
+import static com.trip.cheap.flight.model.request.Cabins.ECONOMY;
+import static com.trip.cheap.flight.model.request.Sort.PRICE;
 
 @Slf4j
 @Controller

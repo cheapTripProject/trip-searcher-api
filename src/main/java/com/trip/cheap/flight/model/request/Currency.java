@@ -1,4 +1,4 @@
-package com.trip.cheap.flight.model;
+package com.trip.cheap.flight.model.request;
 
 public enum Currency {
     AED,

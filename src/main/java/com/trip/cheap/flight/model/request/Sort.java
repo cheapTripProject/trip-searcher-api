@@ -1,4 +1,4 @@
-package com.trip.cheap.flight.model;
+package com.trip.cheap.flight.model.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
