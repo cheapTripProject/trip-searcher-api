@@ -1,5 +1,6 @@
 package com.trip.cheap.flight;
 
+import com.trip.cheap.flight.model.Currency;
 import com.trip.cheap.flight.model.FlightQueryParam;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.io.IOException;
+
+import static com.trip.cheap.flight.model.Cabins.ECONOMY;
+import static com.trip.cheap.flight.model.Sort.PRICE;
 
 @Slf4j
 @Controller
@@ -33,6 +37,9 @@ public class FlightController {
             FlightQueryParam.builder()
                             .baseUrl(baseUrl)
                             .flyFrom("IAS")
+                            .selectedCabins(ECONOMY.getCabinClass())
+                            .curr(Currency.RON)
+                            .sort(PRICE.getSortCriteria())
                             .dateFrom("30/11/2023")
                             .dateTo("30/11/2023")
                             .build();

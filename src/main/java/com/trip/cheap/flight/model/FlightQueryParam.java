@@ -52,6 +52,7 @@ public class FlightQueryParam {
 
     private Integer infants;
 
+    //Cabins enum
     private String selectedCabins;
 
     private String mixWithCabins;
@@ -78,7 +79,7 @@ public class FlightQueryParam {
 
     private String partnerMarket;
 
-    private String curr;
+    private Currency curr;
 
     private String locale;
 
@@ -131,6 +132,7 @@ public class FlightQueryParam {
     @Builder.Default
     private boolean enableVi = false;
 
+    //Sort enum
     private String sort;
 
     private Integer limit;

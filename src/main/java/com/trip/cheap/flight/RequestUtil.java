@@ -142,9 +142,7 @@ public class RequestUtil {
                 : ""
                 : "")
             .append(queryParam.getCurr() != null
-                ? !queryParam.getCurr().isEmpty()
-                ? "curr=" + queryParam.getCurr() + "&"
-                : ""
+                ?  "curr=" + queryParam.getCurr() + "&"
                 : "")
             .append(queryParam.getLocale() != null
                 ? !queryParam.getLocale().isEmpty()
