@@ -2,13 +2,11 @@ package com.trip.cheap.flight.model.response;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.trip.cheap.flight.model.request.Currency;
-import lombok.Builder;
-import lombok.Getter;
+import lombok.Data;
 
-import java.util.List;
+import java.util.LinkedList;
 
-@Getter
-@Builder
+@Data
 public class FlightResponse {
 
     @JsonProperty("search_id")
@@ -21,5 +19,8 @@ public class FlightResponse {
     private Double fxRate;
 
     @JsonProperty("data")
-    private List <Data> data;
+    private LinkedList <FlightData> data;
+
+    @JsonProperty("_results")
+    private Integer resultsCount;
 }

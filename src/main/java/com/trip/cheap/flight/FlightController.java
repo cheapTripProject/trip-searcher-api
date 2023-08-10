@@ -2,6 +2,7 @@ package com.trip.cheap.flight;
 
 import com.trip.cheap.flight.model.request.Currency;
 import com.trip.cheap.flight.model.request.FlightQueryParam;
+import com.trip.cheap.flight.model.response.FlightResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -31,7 +32,7 @@ public class FlightController {
     @GetMapping
     @RequestMapping(value = "/getFlights", produces = "application/json", consumes = "application/json")
     public @ResponseBody
-    String getFlights(@RequestBody String dummy) throws IOException, InterruptedException {
+    FlightResponse getFlights(@RequestBody String dummy) throws IOException, InterruptedException {
 
         FlightQueryParam flightQueryParam =
             FlightQueryParam.builder()
