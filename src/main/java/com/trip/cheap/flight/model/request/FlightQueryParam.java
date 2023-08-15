@@ -2,11 +2,17 @@ package com.trip.cheap.flight.model.request;
 
 import lombok.Builder;
 import lombok.Getter;
+import lombok.ToString;
 
 @Getter
 @Builder
+@ToString
 public class FlightQueryParam {
     //TODO: set default values based on documentation
+
+    public void setBaseUrl(String baseUrl) {
+        this.baseUrl = baseUrl;
+    }
 
     @Builder.Default
     private String baseUrl = "https://api.tequila.kiwi.com/v2/search?";

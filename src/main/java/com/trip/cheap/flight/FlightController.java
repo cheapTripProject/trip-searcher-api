@@ -32,9 +32,13 @@ public class FlightController {
     @GetMapping
     @RequestMapping(value = "/getFlights", produces = "application/json", consumes = "application/json")
     public @ResponseBody
-    FlightResponse getFlights(@RequestBody String dummy) throws IOException, InterruptedException {
+    FlightResponse getFlights(@RequestBody FlightQueryParam flightQueryParam) throws IOException, InterruptedException {
 
-        FlightQueryParam flightQueryParam =
+        flightQueryParam.setBaseUrl(baseUrl);
+        log.debug(flightQueryParam.toString());
+
+        // just for testing purpose
+        FlightQueryParam flightQueryParamTest =
             FlightQueryParam.builder()
                             .baseUrl(baseUrl)
                             .flyFrom("IAS")
